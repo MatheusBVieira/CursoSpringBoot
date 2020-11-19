@@ -6,14 +6,14 @@ import org.springframework.data.domain.Page;
 
 import br.com.alura.forum.modelo.Topico;
 
-public class TopicoDto {
+public class TopicoDtoo {
 
 	private Long id;
 	private String titulo;
 	private String mensagem;
 	private LocalDateTime dataCriacao;
 
-	public TopicoDto(Topico topico) {
+	public TopicoDtoo(Topico topico) {
 		this.id = topico.getId();
 		this.titulo = topico.getTitulo();
 		this.mensagem = topico.getMensagem();
@@ -36,8 +36,8 @@ public class TopicoDto {
 		return dataCriacao;
 	}
 
-	public static Page<TopicoDto> converter(Page<Topico> topicos) {
-		return topicos.map(TopicoDto::new);
+	public static Page<TopicoDtoo> converter(Page<Topico> topicos) {
+		return topicos.map(TopicoDtoo::new);
 	}
 
 }
