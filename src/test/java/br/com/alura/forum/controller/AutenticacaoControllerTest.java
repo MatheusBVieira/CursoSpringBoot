@@ -18,12 +18,13 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 //@WebMvcTest
 @SpringBootTest
 @AutoConfigureMockMvc
-@ActiveProfiles(value = { "prod", "test" })
+@ActiveProfiles(value = "test")
 public class AutenticacaoControllerTest {
 
 	@Autowired
 	private MockMvc mockMvc;
 
+// Conflito com arquivo application-prod.properties nao deixa maven buildar
 	@Test
 	public void deveriaDevolver400CasoDadosDeAutenticaçãoEstejamIncorretos() throws Exception {
 		URI uri = new URI("/auth");
